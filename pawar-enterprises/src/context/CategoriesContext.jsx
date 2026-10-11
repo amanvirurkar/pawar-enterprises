@@ -50,7 +50,7 @@ const DEFAULT_CATEGORIES = [
 ];
 
 export const CategoriesProvider = ({ children }) => {
-  const [categories, setCategories] = useState(DEFAULT_CATEGORIES);
+  const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
