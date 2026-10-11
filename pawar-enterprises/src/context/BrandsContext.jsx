@@ -18,7 +18,7 @@ const DEFAULT_BRANDS = [
 ];
 
 export const BrandsProvider = ({ children }) => {
-  const [brands, setBrands] = useState(DEFAULT_BRANDS);
+  const [brands, setBrands] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
