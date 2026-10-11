@@ -22,31 +22,16 @@ export const BrandsProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onSnapshot(collection(db, 'brands'), async (snapshot) => {
-      if (snapshot.empty) {
-        try {
-          for (const brand of DEFAULT_BRANDS) {
-            await setDoc(doc(db, 'brands', brand.id), {
-              ...brand,
-              createdAt: serverTimestamp()
-            });
-          }
-          setBrands(DEFAULT_BRANDS);
-        } catch (e) {
-          console.warn("Could not seed brands, using local defaults:", e);
-          setBrands(DEFAULT_BRANDS);
-        }
-      } else {
-        const brandList = snapshot.docs.map(docSnap => ({
-          id: docSnap.id,
-          ...docSnap.data()
-        }));
-        setBrands(brandList);
-      }
+    const unsubscribe = onSnapshot(collection(db, 'brands'), (snapshot) => {
+      const brandList = snapshot.docs.map(docSnap => ({
+        id: docSnap.id,
+        ...docSnap.data()
+      }));
+      setBrands(brandList);
       setLoading(false);
     }, (error) => {
       console.error("Error listening to brands:", error);
-      setBrands(DEFAULT_BRANDS);
+      setBrands([]);
       setLoading(false);
     });
 

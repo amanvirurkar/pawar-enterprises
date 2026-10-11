@@ -55,33 +55,16 @@ export const CategoriesProvider = ({ children }) => {
 
   useEffect(() => {
     // Real-time listener for categories
-    const unsubscribe = onSnapshot(collection(db, 'categories'), async (snapshot) => {
-      if (snapshot.empty) {
-        // If Firestore categories collection is empty, seed with initial defaults
-        try {
-          for (const cat of DEFAULT_CATEGORIES) {
-            await setDoc(doc(db, 'categories', cat.id), {
-              ...cat,
-              createdAt: serverTimestamp()
-            });
-          }
-          setCategories(DEFAULT_CATEGORIES);
-        } catch (e) {
-          console.warn("Could not seed categories, using local defaults:", e);
-          setCategories(DEFAULT_CATEGORIES);
-        }
-      } else {
-        const catList = snapshot.docs.map(docSnap => ({
-          id: docSnap.id,
-          ...docSnap.data()
-        }));
-        // Sort by name or createdAt
-        setCategories(catList);
-      }
+    const unsubscribe = onSnapshot(collection(db, 'categories'), (snapshot) => {
+      const catList = snapshot.docs.map(docSnap => ({
+        id: docSnap.id,
+        ...docSnap.data()
+      }));
+      setCategories(catList);
       setLoading(false);
     }, (error) => {
       console.error("Error listening to categories:", error);
-      setCategories(DEFAULT_CATEGORIES);
+      setCategories([]);
       setLoading(false);
     });
 
