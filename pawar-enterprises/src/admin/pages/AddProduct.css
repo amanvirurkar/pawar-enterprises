@@ -1,0 +1,309 @@
+.product-form-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .product-form-layout {
+    flex-direction: row;
+  }
+}
+
+.form-main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-sidebar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .form-sidebar {
+    width: 320px;
+  }
+}
+
+.form-section {
+  padding: 24px;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #E2E8F0;
+  padding-bottom: 12px;
+}
+
+.section-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #E2E8F0;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.mb-0 { margin-bottom: 0 !important; border-bottom: none !important; padding-bottom: 0 !important; }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #111827;
+  background-color: #F8FAFC;
+  transition: all 200ms ease;
+  font-family: inherit;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #ED1C24;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(237, 28, 36, 0.1);
+}
+
+.image-upload-zone {
+  border: 2px dashed #CBD5E1;
+  border-radius: 12px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #F8FAFC;
+  transition: all 200ms ease;
+  cursor: pointer;
+}
+
+.image-upload-zone:hover {
+  border-color: #ED1C24;
+  background-color: #FEF2F2;
+}
+
+.upload-icon {
+  color: #94A3B8;
+  margin-bottom: 16px;
+}
+
+.image-upload-zone h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 4px;
+}
+
+.image-upload-zone p {
+  font-size: 13px;
+  color: #64748B;
+}
+
+.spec-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.toggle-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.toggle-info strong {
+  display: block;
+  font-size: 14px;
+  color: #111827;
+}
+
+.toggle-info span {
+  font-size: 12px;
+  color: #64748B;
+}
+
+/* Custom Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #E2E8F0;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #22C55E;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #22C55E;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+.slider.round {
+  border-radius: 24px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Product Image Gallery Styles */
+.image-input-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.product-images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.product-image-card {
+  position: relative;
+  height: 130px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #E2E8F0;
+  background: #F8FAFC;
+  transition: all 0.2s ease;
+}
+
+.product-image-card.is-cover {
+  border-color: #ED1C24;
+  box-shadow: 0 0 0 2px rgba(237, 28, 36, 0.2);
+}
+
+.product-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-image-cover-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background: #ED1C24;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-image-actions {
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  right: 6px;
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.product-image-action-btn {
+  background: rgba(15, 23, 42, 0.8);
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: background 0.2s;
+}
+
+.product-image-action-btn:hover {
+  background: rgba(15, 23, 42, 1);
+}
+
+.product-image-action-btn.delete-btn {
+  background: rgba(239, 68, 68, 0.9);
+}
+
+.product-image-action-btn.delete-btn:hover {
+  background: #DC2626;
+}

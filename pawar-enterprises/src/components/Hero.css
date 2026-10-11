@@ -1,0 +1,267 @@
+/* ==========================================================================
+   HERO SECTION - PERFECT REPLICA OF REFERENCE IMAGE
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  min-height: 850px;
+  display: flex;
+  overflow: hidden;
+  padding: 0;
+  background-image: url('/hero-bg.png');
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-color: #FFFFFF;
+}
+
+/* Container */
+.hero-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content Box */
+.hero-content {
+  width: 48%;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  /* Ensure left alignment */
+  min-height: 620px;
+  margin-left: -70px;
+  margin-top: 30px;
+}
+
+/* Top Badge */
+.hero-badge {
+  background-color: #FDEBEB;
+  color: #ED1C24;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 30px;
+  margin-bottom: 24px;
+}
+
+/* Main Heading */
+.hero-title {
+  font-weight: 900;
+  line-height: 1.1;
+  font-size: 64px;
+  margin-bottom: 18px;
+  letter-spacing: -1px;
+}
+
+.text-dark {
+  color: #111827;
+}
+
+.text-primary {
+  color: #ED1C24;
+}
+
+/* Subtitle */
+.hero-subtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #475569;
+  max-width: 480px;
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+/* Buttons Container */
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+/* Primary Button */
+.hero-btn-primary {
+  background: #ED1C24;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: 10px;
+}
+
+.hero-btn-primary:hover {
+  background: #D71920;
+  transform: translateY(-2px);
+  color: #FFFFFF;
+}
+
+/* Secondary Button */
+.hero-btn-secondary {
+  background: transparent;
+  color: #111827;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  gap: 10px;
+}
+
+.hero-btn-secondary:hover {
+  border-color: #ED1C24;
+  background: #FFFFFF;
+}
+
+/* Stats Row - Floating */
+.hero-feature-row {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+/* Icon matching the image */
+.hf-icon-wrapper {
+  color: #ED1C24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #ED1C24;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: transparent;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hf-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  padding: 8px 12px 8px 0;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.hf-item:hover {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 8px 16px 8px 12px;
+  margin-left: -12px; /* Offset the padding shift */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.hf-item:hover .hf-icon-wrapper {
+  background: #ED1C24;
+  color: white;
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 5px 15px rgba(237, 28, 36, 0.3);
+}
+
+.hf-text {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.hf-item:hover .hf-text {
+  transform: translateX(4px);
+}
+
+.hf-text strong {
+  color: #111827;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.hf-text span {
+  color: #64748B;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE COMPOSITION
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 50px;
+  }
+
+  .hero-content {
+    width: 55%;
+    padding-left: 24px;
+  }
+
+  .hero-feature-row {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    max-height: none;
+    padding: 40px 0;
+    background-position: center;
+  }
+
+  .hero-content {
+    width: auto;
+    align-items: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    /* Readability on mobile */
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    padding: 32px 20px;
+    margin: 0 20px;
+    min-height: auto;
+  }
+
+  .hero-subtitle {
+    margin: 0 auto 32px;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-feature-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-top: 10px;
+  }
+
+  .hf-item {
+    width: 100%;
+    justify-content: center;
+  }
+}

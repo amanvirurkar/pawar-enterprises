@@ -1,0 +1,209 @@
+.why-choose-us-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background dark red circles */
+.wcu-bg-circle {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 1px solid rgba(227, 30, 36, 0.1);
+  background: radial-gradient(circle, rgba(227, 30, 36, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.wcu-bg-left {
+  top: 50%;
+  left: -300px;
+  transform: translateY(-50%);
+}
+
+.wcu-bg-right {
+  top: -200px;
+  right: -300px;
+}
+
+/* Grid */
+.wcu-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  z-index: 2;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .wcu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .wcu-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Card */
+.wcu-card {
+  background-color: white;
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  color: var(--color-text-primary);
+  min-height: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.wcu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Big Number Watermark */
+.wcu-number {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #F1F5F9;
+  line-height: 1;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Icon */
+.wcu-icon-wrapper {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: #FFF0F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  z-index: 2;
+  position: relative;
+}
+
+/* Content */
+.wcu-title {
+  font-size: 1.125rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  z-index: 2;
+  position: relative;
+  max-width: 80%;
+  color: var(--color-text-primary) !important;
+}
+
+.wcu-desc {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  z-index: 2;
+  position: relative;
+  max-width: 65%;
+  flex-grow: 1;
+}
+
+/* Footer Link */
+.wcu-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 3;
+  position: relative;
+  margin-top: auto;
+}
+
+.wcu-link-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  position: relative;
+  padding-bottom: 0.25rem;
+  cursor: pointer;
+}
+
+.wcu-link-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: var(--color-primary);
+  opacity: 0.3;
+  transition: opacity var(--transition-fast);
+}
+
+.wcu-card:hover .wcu-link-underline {
+  opacity: 1;
+}
+
+.wcu-arrow-btn {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+  cursor: pointer;
+}
+
+.wcu-card:hover .wcu-arrow-btn {
+  transform: translateX(4px);
+}
+
+/* Floating Image on Right */
+.wcu-floating-image-wrapper {
+  position: absolute;
+  bottom: 1rem;
+  right: -1rem;
+  width: 140px;
+  height: 140px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.wcu-floating-circle {
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFEBEB 0%, transparent 70%);
+  z-index: 1;
+}
+
+.wcu-floating-image {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 2;
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+  transition: transform var(--transition-normal);
+}
+
+.wcu-card:hover .wcu-floating-image {
+  transform: scale(1.05) translate(-5px, -5px);
+}

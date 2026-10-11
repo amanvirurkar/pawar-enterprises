@@ -1,0 +1,248 @@
+.wishlist-page {
+  background-color: #FAFAFA;
+  min-height: calc(100vh - 80px); /* rough header height */
+  padding-bottom: 80px;
+}
+
+/* Header */
+.wl-header {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #F1F5F9;
+  padding: 40px 0;
+  margin-bottom: 40px;
+}
+
+.wl-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.wl-subtitle {
+  font-size: 15px;
+  color: #64748B;
+}
+
+/* Empty State */
+.wl-empty-state {
+  background: #FFFFFF;
+  border: 1px dashed #CBD5E1;
+  border-radius: 20px;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.wl-empty-icon {
+  width: 96px;
+  height: 96px;
+  background: #FFF1F2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.wl-empty-state h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.wl-empty-state p {
+  font-size: 16px;
+  color: #64748B;
+  margin-bottom: 32px;
+}
+
+.wl-browse-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ED1C24;
+  color: white;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 250ms ease;
+  box-shadow: 0 4px 15px rgba(237, 28, 36, 0.2);
+}
+
+.wl-browse-btn:hover {
+  background: #C81E24;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(237, 28, 36, 0.3);
+}
+
+/* Grid Layout */
+.wl-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 24px;
+}
+
+@media (min-width: 640px) {
+  .wl-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .wl-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Wishlist Card */
+.wl-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: all 300ms ease;
+}
+
+.wl-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+  border-color: #FECACA;
+}
+
+.wl-img-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #F8FAFC;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.wl-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 300ms ease;
+}
+
+.wl-card:hover .wl-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.wl-card-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.wl-brand {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.wl-product-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  text-decoration: none;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 42px; /* 2 lines approx */
+}
+
+.wl-product-title:hover {
+  color: #ED1C24;
+}
+
+.wl-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.wl-price {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ED1C24;
+}
+
+.wl-orig-price {
+  font-size: 13px;
+  color: #94A3B8;
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+/* Actions Row */
+.wl-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  border-top: 1px solid #F1F5F9;
+  padding-top: 16px;
+}
+
+.wl-view-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #F8FAFC;
+  color: #111827;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  height: 40px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 200ms ease;
+}
+
+.wl-view-btn:hover {
+  background: #111827;
+  color: #FFFFFF;
+  border-color: #111827;
+}
+
+.wl-remove-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFF1F2;
+  color: #ED1C24;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  transition: all 200ms ease;
+}
+
+.wl-remove-btn:hover {
+  background: #FEE2E2;
+  border-color: #FECACA;
+  transform: scale(1.05);
+}
