@@ -6,17 +6,6 @@ const BrandsContext = createContext();
 
 export const useBrands = () => useContext(BrandsContext);
 
-const DEFAULT_BRANDS = [
-  { id: 'samsung', name: 'Samsung', status: 'Active', description: 'Global electronics and appliances leader', logo: 'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&q=80&w=200' },
-  { id: 'lg', name: 'LG', status: 'Active', description: 'Life\'s Good - Innovative home appliances', logo: 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&q=80&w=200' },
-  { id: 'sony', name: 'Sony', status: 'Active', description: 'Premium entertainment & sound systems', logo: 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&q=80&w=200' },
-  { id: 'philips', name: 'Philips', status: 'Active', description: 'Personal care & kitchen electronics', logo: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=200' },
-  { id: 'bosch', name: 'Bosch', status: 'Active', description: 'Engineered for excellence', logo: 'https://images.unsplash.com/photo-1584267385494-9fdd9a71ad75?auto=format&fit=crop&q=80&w=200' },
-  { id: 'daikin', name: 'Daikin', status: 'Active', description: 'Air conditioning & climate comfort', logo: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=200' },
-  { id: 'kent', name: 'Kent', status: 'Active', description: 'Water purifiers & appliances', logo: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=200' },
-  { id: 'haier', name: 'Haier', status: 'Active', description: 'Smart home & kitchen appliances', logo: 'https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80&w=200' },
-];
-
 export const BrandsProvider = ({ children }) => {
   const [brands, setBrands] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -39,7 +28,7 @@ export const BrandsProvider = ({ children }) => {
   }, []);
 
   return (
-    <BrandsContext.Provider value={{ brands, loading, defaultBrands: DEFAULT_BRANDS }}>
+    <BrandsContext.Provider value={{ brands, loading, defaultBrands: [] }}>
       {children}
     </BrandsContext.Provider>
   );
